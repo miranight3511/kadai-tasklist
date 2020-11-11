@@ -15,11 +15,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAlltasks",
-            query = "SELECT m FROM Tasks AS m ORder BY t.id DESC"
+            query = "SELECT m FROM Task AS m ORder BY m.id DESC"
             )
 })
 @Table(name = "tasks")
-public class task {
+public class Task {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +31,7 @@ public class task {
     @Column(name = "content", length =255, nullable = false)
     private String content;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
     @Column(name = "updated_at", nullable = false)
@@ -76,7 +76,5 @@ public class task {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
-
-
-
 }
+
